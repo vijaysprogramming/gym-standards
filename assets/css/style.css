@@ -147,13 +147,9 @@
   padding: 0;
 }
 .heading {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   text-align: center;
   margin-bottom: 1rem;
-  color: whitesmoke;
-  padding-top: 10px;
- 
-
 }
 .items1, .items2 {
   display: flex;
@@ -165,12 +161,25 @@
   flex: 1 0 24%; /* Assuming 4 items per row, you can adjust this value */
   margin: 0;
   padding: 0;
+  position: relative;
+  overflow: hidden; /* Ensure hover effect stays within bounds */
 }
 .items1 a img, .items2 a img {
   width: 100%;
   height: auto;
   display: block;
+  transition: background-color 0.3s ease;
 }
+.items1 a:hover::before, .items2 a:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(204, 8, 8, 0.61); /* Light red background with opacity */
+}
+
 
 /* menu end */
 /*-- Overlay Opacity --*/
