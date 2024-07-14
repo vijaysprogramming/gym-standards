@@ -141,7 +141,38 @@
   bottom: 0;
   content: "";
 }
+/* menu start */
+.category {
+  margin: 0;
+  padding: 0;
+}
+.heading {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: whitesmoke;
+  padding-top: 10px;
+ 
 
+}
+.items1, .items2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+.items1 a, .items2 a {
+  flex: 1 0 24%; /* Assuming 4 items per row, you can adjust this value */
+  margin: 0;
+  padding: 0;
+}
+.items1 a img, .items2 a img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* menu end */
 /*-- Overlay Opacity --*/
 /* line 22, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_overlay.scss */
 [data-opacity="1"]::before {
