@@ -238,6 +238,33 @@ button:hover {
   color: #f4f4f4;
 }
 /* carousel one end */
+
+.image-container {
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.image-container .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+
+
 /*-- Overlay Opacity --*/
 /* line 22, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_overlay.scss */
 [data-opacity="1"]::before {
