@@ -238,7 +238,18 @@ button:hover {
   color: #f4f4f4;
 }
 /* carousel one end */
+/* carousel heading start */
+.carousel-heading > h3
+{
+  text-transform: uppercase;
+  font-size: 5rem;
+  color: whitesmoke;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+/* carousel heading end */
 
+/* quick menu start */
 .image-container {
     position: relative;
 }
@@ -261,7 +272,7 @@ button:hover {
     font-weight: bold;
     letter-spacing: 2px;
 }
-
+/* quick menu end */
 
 
 

@@ -213,51 +213,67 @@
 })(jQuery);
 
 
-
 // JavaScript for carousel functionality
 const carousel = document.getElementById('carousel');
 const squares = document.querySelectorAll('.square');
 const totalSquares = squares.length;
 const scrollSpeed = 1; // Adjust scroll speed as needed
+const autoScrollDelay = 1000; // Delay in milliseconds before auto-scroll resumes after manual scroll
 let isAutoScrolling = true;
+let autoScrollTimeout;
+let animationId;
 
 const autoScroll = () => {
     if (isAutoScrolling) {
-        carousel.scrollLeft += scrollSpeed;
-        if (carousel.scrollLeft >= carousel.scrollWidth / 2) {
-            carousel.scrollLeft = 0;
+        carousel.scrollLeft += scrollSpeed; // Scroll right continuously
+        if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
+            carousel.scrollLeft = 0; // Reset to start for continuous loop
         }
     }
-    requestAnimationFrame(autoScroll);
+    animationId = requestAnimationFrame(autoScroll);
 };
 
 const stopAutoScroll = () => {
     isAutoScrolling = false;
+    cancelAnimationFrame(animationId);
 };
 
 const startAutoScroll = () => {
     isAutoScrolling = true;
+    autoScroll();
+};
+
+const restartAutoScroll = () => {
+    clearTimeout(autoScrollTimeout);
+    autoScrollTimeout = setTimeout(() => {
+        startAutoScroll();
+    }, autoScrollDelay);
 };
 
 // Start auto-scrolling immediately
-autoScroll();
+startAutoScroll();
 
-// Handle button clicks
+// Handle manual scrolling with buttons
 const handleClickGoAhead = () => {
+    stopAutoScroll();
     carousel.scrollLeft += squares[0].offsetWidth;
-    if (carousel.scrollLeft >= carousel.scrollWidth / 2) {
+    if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
         carousel.scrollLeft = 0;
     }
+    restartAutoScroll();
 };
 
 const handleClickGoBack = () => {
+    stopAutoScroll();
     carousel.scrollLeft -= squares[0].offsetWidth;
     if (carousel.scrollLeft < 0) {
-        carousel.scrollLeft = carousel.scrollWidth / 2;
+        carousel.scrollLeft = carousel.scrollWidth - carousel.clientWidth;
     }
+    restartAutoScroll();
 };
 
-// Handle manual scrolling with buttons
+// Event listeners for manual scrolling buttons
 document.querySelector('#left').addEventListener('click', handleClickGoBack);
 document.querySelector('#right').addEventListener('click', handleClickGoAhead);
+
 
