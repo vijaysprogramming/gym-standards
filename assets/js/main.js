@@ -211,3 +211,53 @@
   });
 
 })(jQuery);
+
+
+
+// JavaScript for carousel functionality
+const carousel = document.getElementById('carousel');
+const squares = document.querySelectorAll('.square');
+const totalSquares = squares.length;
+const scrollSpeed = 1; // Adjust scroll speed as needed
+let isAutoScrolling = true;
+
+const autoScroll = () => {
+    if (isAutoScrolling) {
+        carousel.scrollLeft += scrollSpeed;
+        if (carousel.scrollLeft >= carousel.scrollWidth / 2) {
+            carousel.scrollLeft = 0;
+        }
+    }
+    requestAnimationFrame(autoScroll);
+};
+
+const stopAutoScroll = () => {
+    isAutoScrolling = false;
+};
+
+const startAutoScroll = () => {
+    isAutoScrolling = true;
+};
+
+// Start auto-scrolling immediately
+autoScroll();
+
+// Handle button clicks
+const handleClickGoAhead = () => {
+    carousel.scrollLeft += squares[0].offsetWidth;
+    if (carousel.scrollLeft >= carousel.scrollWidth / 2) {
+        carousel.scrollLeft = 0;
+    }
+};
+
+const handleClickGoBack = () => {
+    carousel.scrollLeft -= squares[0].offsetWidth;
+    if (carousel.scrollLeft < 0) {
+        carousel.scrollLeft = carousel.scrollWidth / 2;
+    }
+};
+
+// Handle manual scrolling with buttons
+document.querySelector('#left').addEventListener('click', handleClickGoBack);
+document.querySelector('#right').addEventListener('click', handleClickGoAhead);
+

@@ -16,6 +16,7 @@
 		<!-- CSS here -->
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+		<link rel="stylesheet" href="css/owl.theme.default.min.css" />
 		<link rel="stylesheet" href="assets/css/slicknav.css" />
 		<link rel="stylesheet" href="assets/css/flaticon.css" />
 		<link rel="stylesheet" href="assets/css/gijgo.css" />
@@ -27,6 +28,10 @@
 		<link rel="stylesheet" href="assets/css/slick.css" />
 		<link rel="stylesheet" href="assets/css/nice-select.css" />
 		<link rel="stylesheet" href="assets/css/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css"
+		/>
 	</head>
 	<body class="black-bg">
 		<!-- ? Preloader Start -->
@@ -293,6 +298,28 @@
 				</div>
 			</div>
 			<!-- quick menu end -->
+			<!-- Carousel start -->
+			<div
+				id="wrapper"
+				onmouseover="stopAutoScroll()"
+				onmouseout="startAutoScroll()"
+			>
+				<div id="carousel">
+					<div class="square">1</div>
+					<div class="square">2</div>
+					<div class="square">3</div>
+					<div class="square">4</div>
+					<div class="square">5</div>
+					<div class="square">6</div>
+					<div class="square">7</div>
+				</div>
+			</div>
+			<div class="buttons">
+				<button onclick="handleClickGoBack()" id="left"><</button>
+				<button onclick="handleClickGoAhead()" id="right">></button>
+			</div>
+			<!-- Carousel end -->
+
 			<!-- little gap start -->
 			<div style="margin-top: 1rem; margin-bottom: 1rem"></div>
 			<!-- little gap end -->
