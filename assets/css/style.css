@@ -3376,7 +3376,7 @@ hr {
 }
 
 /* line 58, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_headerMenu.scss */
-.header-area .menu-wrapper .main-menu ul li {
+.header-area .menu-wrapper .main-menu ul li{
   display: inline-block;
   position: relative;
   z-index: 1;
