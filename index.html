@@ -318,6 +318,10 @@
 			<div style="margin-top: 1rem; margin-bottom: 2rem"></div>
 			<!-- little gap end -->
 
+			<!-- little gap start -->
+			<div style="margin-top: 1rem; margin-bottom: 1rem"></div>
+			<!-- little gap end -->
+
 			<!-- home gym carousel start -->
 			<div class="carousel-heading">
 				<h3>gym equipment</h3>
@@ -344,37 +348,45 @@
 			<!-- home gym carousel end -->
 
 			<!-- little gap start -->
-			<div style="margin-top: 1rem; margin-bottom: 1rem"></div>
+			<div style="margin-top: 1rem; margin-bottom: 2rem"></div>
 			<!-- little gap end -->
 
-			<!-- commercial gym carousel start -->
-			<div class="carousel-heading">
-				<h3>COMMERCIAL GYM FITNESS EQUIPMENT</h3>
+			<!-- comm gym carousel start -->
+			<div class="carousel-title">
+				<h3>commercial gym equipment</h3>
 			</div>
 			<div
-				id="wrapper2"
-				onmouseover="stopAutoScroll()"
-				onmouseout="startAutoScroll()"
+				class="carousel-wrapper"
+				onmouseover="pauseCarouselAutoScroll()"
+				onmouseout="resumeCarouselAutoScroll()"
 			>
-				<div id="carousel2">
-					<div class="square">1</div>
-					<div class="square">2</div>
-					<div class="square">3</div>
-					<div class="square">4</div>
-					<div class="square">5</div>
-					<div class="square">6</div>
-					<div class="square">7</div>
+				<div class="carousel-content">
+					<div class="carousel-item">1</div>
+					<div class="carousel-item">2</div>
+					<div class="carousel-item">3</div>
+					<div class="carousel-item">4</div>
+					<div class="carousel-item">5</div>
+					<div class="carousel-item">6</div>
+					<div class="carousel-item">7</div>
 				</div>
 			</div>
-			<div class="buttons2">
-				<button onclick="handleClickGoBack2()" id="left2"><</button>
-				<button onclick="handleClickGoAhead2()" id="right2">></button>
+			<div class="carousel-buttons">
+				<button
+					class="carousel-btn"
+					onclick="scrollCarouselBackward()"
+					id="carousel-scroll-left"
+				>
+					<
+				</button>
+				<button
+					class="carousel-btn"
+					onclick="scrollCarouselForward()"
+					id="carousel-scroll-right"
+				>
+					>
+				</button>
 			</div>
-			<!-- commercial gym carousel end -->
-
-			<!-- little gap start -->
-			<div style="margin-top: 1rem; margin-bottom: 1rem"></div>
-			<!-- little gap end -->
+			<!-- comm gym carousel end -->
 
 			<!-- Traning categories Start -->
 			<section class="traning-categories black-bg">

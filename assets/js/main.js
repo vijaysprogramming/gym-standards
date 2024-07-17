@@ -212,7 +212,6 @@
 
 })(jQuery);
 
-
 // JavaScript for carousel functionality 1
 const carousel = document.getElementById('carousel');
 const squares = document.querySelectorAll('.square');
@@ -277,67 +276,68 @@ document.querySelector('#left').addEventListener('click', handleClickGoBack);
 document.querySelector('#right').addEventListener('click', handleClickGoAhead);
 
 
-// JavaScript for carousel functionality 2
-const carousel2 = document.getElementById('carousel2');
-const squares2 = document.querySelectorAll('.square');
-const totalSquares2 = squares.length;
-const scrollSpeed2 = 1; // Adjust scroll speed as needed
-const autoScrollDelay2 = 1000; // Delay in milliseconds before auto-scroll resumes after manual scroll
-let isAutoScrolling2 = true;
-let autoScrollTimeout2;
-let animationId2;
-
-const autoScroll2 = () => {
-    if (isAutoScrolling2) {
-        carousel2.scrollLeft += scrollSpeed2; // Scroll right continuously
-        if (carousel2.scrollLeft >= carousel2.scrollWidth - carousel2.clientWidth) {
-            carousel2.scrollLeft = 0; // Reset to start for continuous loop
-        }
-    }
-    animationId2 = requestAnimationFrame(autoScroll2);
-};
-
-const stopAutoScroll2 = () => {
-    isAutoScrolling2 = false;
-    cancelAnimationFrame2(animationId2);
-};
-
-const startAutoScroll2 = () => {
-    isAutoScrolling2 = true;
-    autoScroll2();
-};
-
-const restartAutoScroll2 = () => {
-    clearTimeout(autoScrollTimeout);
-    autoScrollTimeout2 = setTimeout(() => {
-        startAutoScroll2();
-    }, autoScrollDelay);
-};
-
-// Start auto-scrolling immediately
-startAutoScroll2();
-
-// Handle manual scrolling with buttons
-const handleClickGoAhead2 = () => {
-    stopAutoScroll2();
-    carousel2.scrollLeft += squares[0].offsetWidth;
-    if (carousel2.scrollLeft >= carousel2.scrollWidth - carousel2.clientWidth) {
-        carousel2.scrollLeft = 0;
-    }
-    restartAutoScroll2();
-};
-
-const handleClickGoBack2 = () => {
-    stopAutoScroll2();
-    carousel2.scrollLeft -= squares[0].offsetWidth;
-    if (carousel2.scrollLeft < 0) {
-        carousel2.scrollLeft = carousel2.scrollWidth - carousel2.clientWidth;
-    }
-    restartAutoScroll2();
-};
-
-// Event listeners for manual scrolling buttons
-document.querySelector('#left2').addEventListener('click', handleClickGoBack2);
-document.querySelector('#right2').addEventListener('click', handleClickGoAhead2);
 
 
+
+//second carousel
+ // JavaScript for carousel functionality
+ const carouselElement = document.querySelector('.carousel-content');
+ const carouselItems = document.querySelectorAll('.carousel-item');
+ const carouselScrollSpeed = 1; // Adjust scroll speed as needed
+ const carouselAutoScrollDelay = 1000; // Delay in milliseconds before auto-scroll resumes after manual scroll
+ let carouselAutoScrollActive = true;
+ let carouselAutoScrollTimeout;
+ let carouselScrollAnimationId;
+
+ const autoScrollCarousel = () => {
+     if (carouselAutoScrollActive) {
+         carouselElement.scrollLeft += carouselScrollSpeed; // Scroll right continuously
+         if (carouselElement.scrollLeft >= carouselElement.scrollWidth - carouselElement.clientWidth) {
+             carouselElement.scrollLeft = 0; // Reset to start for continuous loop
+         }
+     }
+     carouselScrollAnimationId = requestAnimationFrame(autoScrollCarousel);
+ };
+
+ const pauseCarouselAutoScroll = () => {
+     carouselAutoScrollActive = false;
+     cancelAnimationFrame(carouselScrollAnimationId);
+ };
+
+ const resumeCarouselAutoScroll = () => {
+     carouselAutoScrollActive = true;
+     autoScrollCarousel();
+ };
+
+ const restartCarouselAutoScroll = () => {
+     clearTimeout(carouselAutoScrollTimeout);
+     carouselAutoScrollTimeout = setTimeout(() => {
+         resumeCarouselAutoScroll();
+     }, carouselAutoScrollDelay);
+ };
+
+ // Start auto-scrolling immediately
+ autoScrollCarousel();
+
+ // Handle manual scrolling with buttons
+ const scrollCarouselForward = () => {
+     pauseCarouselAutoScroll();
+     carouselElement.scrollLeft += carouselItems[0].offsetWidth;
+     if (carouselElement.scrollLeft >= carouselElement.scrollWidth - carouselElement.clientWidth) {
+         carouselElement.scrollLeft = 0;
+     }
+     restartCarouselAutoScroll();
+ };
+
+ const scrollCarouselBackward = () => {
+     pauseCarouselAutoScroll();
+     carouselElement.scrollLeft -= carouselItems[0].offsetWidth;
+     if (carouselElement.scrollLeft < 0) {
+         carouselElement.scrollLeft = carouselElement.scrollWidth - carouselElement.clientWidth;
+     }
+     restartCarouselAutoScroll();
+ };
+
+ // Event listeners for manual scrolling buttons
+ document.querySelector('#carousel-scroll-left').addEventListener('click', scrollCarouselBackward);
+ document.querySelector('#carousel-scroll-right').addEventListener('click', scrollCarouselForward);
