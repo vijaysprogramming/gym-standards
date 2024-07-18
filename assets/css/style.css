@@ -188,13 +188,23 @@
   font-size: 25px;
   color: whitesmoke;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .mobile-only li a {
   text-decoration: none;
   cursor: default;
   font-size: 2.3rem;
-  margin-right: 120px;
+}
+
+@media (max-width: 375px) {
+  .mobile-only li {
+      font-size: 20px; /* Adjust font size for very small screens */
+  }
+
+  .mobile-only li a {
+      font-size: 2rem; /* Adjust font size for very small screens */
+  }
 }
  /* IND | USA end */
 
