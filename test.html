@@ -3,194 +3,69 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
 		<style>
-			/* carousel heading start */
-			.carousel-title > h3 {
-				text-transform: uppercase;
-				font-size: 5rem;
-				color: whitesmoke;
-				text-align: center;
-				margin-bottom: 1.5rem;
-			}
-			/* carousel heading end */
-			/* home gym carousel start */
-			/* carousel one start */
-			.carousel-wrapper {
-				width: 100%;
-				border: 2px solid #e2e2e2;
-				border-color: #bbbbbb;
-				border-radius: 4px;
+			.mobile-only {
+				display: none;
 			}
 
-			.carousel-content {
-				position: relative;
-				display: flex;
-				overflow: hidden;
-				width: 100%;
+			@media (max-width: 767px) {
+				.mobile-only {
+					display: block;
+				}
 			}
 
-			.carousel-item {
-				cursor: pointer;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				color: #bbbbbb;
-				font-size: 50px;
-				min-width: 200px;
-				height: 200px;
-				background-color: #ffffff14;
-				border-radius: 6px;
-				margin: 20px;
-				transition: 100ms ease-in-out;
+			.mobile-only li {
+				font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+					'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+				font-size: 25px;
+				font-weight: bold;
+				white-space: nowrap;
 			}
 
-			.carousel-item:hover {
-				background-color: #ffffff27;
-				border-color: #f4f4f4;
-				color: #d2d2d2;
+			.flag-text {
+				display: inline-block;
+				background-clip: text;
+				-webkit-background-clip: text;
+				color: transparent;
 			}
 
-			.carousel-buttons {
-				display: flex;
-				flex-wrap: wrap;
-				width: 100%;
-				justify-content: center;
-				padding: 10px;
+			.ind-flag {
+				background: url('https://en.wikipedia.org/wiki/Flag_of_India#/media/File:Flag_of_India.svg')
+					no-repeat;
+				background-size: cover;
 			}
 
-			.carousel-btn {
-				cursor: pointer;
-				margin: 10px 10px;
-				font-size: 20px;
-				background-color: unset;
-				color: #bbbbbb;
-				border: 2px solid #bbbbbb;
-				border-color: #bbbbbb;
-				border-radius: 7px;
-				height: 40px;
-				width: 60px;
-				transition: 60ms ease-in-out;
+			.usa-flag {
+				background: url('https://en.wikipedia.org/wiki/Flag_of_the_United_States#/media/File:Flag_of_the_United_States_(DoS_ECA_Color_Standard).svg')
+					no-repeat;
+				background-size: cover;
 			}
 
-			.carousel-btn:hover {
-				border-color: #f4f4f4;
-				color: #f4f4f4;
+			.mobile-only li a {
+				text-decoration: none;
+				cursor: default;
+				font-size: 2.3rem;
 			}
-			/* carousel one end */
-			/* home gym carousel end */
+
+			@media (max-width: 375px) {
+				.mobile-only li {
+					font-size: 20px; /* Adjust font size for very small screens */
+				}
+
+				.mobile-only li a {
+					font-size: 2rem; /* Adjust font size for very small screens */
+				}
+			}
 		</style>
 	</head>
 	<body>
-		<!-- home gym carousel start -->
-		<div class="carousel-title">
-			<h3>gym equipment</h3>
+		<div class="mobile-only">
+			<li>
+				<a href="#">
+					<span class="flag-text ind-flag">IND</span> |
+					<span class="flag-text usa-flag">USA</span>
+				</a>
+			</li>
 		</div>
-		<div
-			class="carousel-wrapper"
-			onmouseover="pauseCarouselAutoScroll()"
-			onmouseout="resumeCarouselAutoScroll()"
-		>
-			<div class="carousel-content">
-				<div class="carousel-item">1</div>
-				<div class="carousel-item">2</div>
-				<div class="carousel-item">3</div>
-				<div class="carousel-item">4</div>
-				<div class="carousel-item">5</div>
-				<div class="carousel-item">6</div>
-				<div class="carousel-item">7</div>
-			</div>
-		</div>
-		<div class="carousel-buttons">
-			<button
-				class="carousel-btn"
-				onclick="scrollCarouselBackward()"
-				id="carousel-scroll-left"
-			>
-				<
-			</button>
-			<button
-				class="carousel-btn"
-				onclick="scrollCarouselForward()"
-				id="carousel-scroll-right"
-			>
-				>
-			</button>
-		</div>
-		<!-- home gym carousel end -->
 	</body>
-	<script>
-		// JavaScript for carousel functionality
-		const carouselElement = document.querySelector('.carousel-content');
-		const carouselItems = document.querySelectorAll('.carousel-item');
-		const carouselScrollSpeed = 1; // Adjust scroll speed as needed
-		const carouselAutoScrollDelay = 1000; // Delay in milliseconds before auto-scroll resumes after manual scroll
-		let carouselAutoScrollActive = true;
-		let carouselAutoScrollTimeout;
-		let carouselScrollAnimationId;
-
-		const autoScrollCarousel = () => {
-			if (carouselAutoScrollActive) {
-				carouselElement.scrollLeft += carouselScrollSpeed; // Scroll right continuously
-				if (
-					carouselElement.scrollLeft >=
-					carouselElement.scrollWidth - carouselElement.clientWidth
-				) {
-					carouselElement.scrollLeft = 0; // Reset to start for continuous loop
-				}
-			}
-			carouselScrollAnimationId = requestAnimationFrame(autoScrollCarousel);
-		};
-
-		const pauseCarouselAutoScroll = () => {
-			carouselAutoScrollActive = false;
-			cancelAnimationFrame(carouselScrollAnimationId);
-		};
-
-		const resumeCarouselAutoScroll = () => {
-			carouselAutoScrollActive = true;
-			autoScrollCarousel();
-		};
-
-		const restartCarouselAutoScroll = () => {
-			clearTimeout(carouselAutoScrollTimeout);
-			carouselAutoScrollTimeout = setTimeout(() => {
-				resumeCarouselAutoScroll();
-			}, carouselAutoScrollDelay);
-		};
-
-		// Start auto-scrolling immediately
-		autoScrollCarousel();
-
-		// Handle manual scrolling with buttons
-		const scrollCarouselForward = () => {
-			pauseCarouselAutoScroll();
-			carouselElement.scrollLeft += carouselItems[0].offsetWidth;
-			if (
-				carouselElement.scrollLeft >=
-				carouselElement.scrollWidth - carouselElement.clientWidth
-			) {
-				carouselElement.scrollLeft = 0;
-			}
-			restartCarouselAutoScroll();
-		};
-
-		const scrollCarouselBackward = () => {
-			pauseCarouselAutoScroll();
-			carouselElement.scrollLeft -= carouselItems[0].offsetWidth;
-			if (carouselElement.scrollLeft < 0) {
-				carouselElement.scrollLeft =
-					carouselElement.scrollWidth - carouselElement.clientWidth;
-			}
-			restartCarouselAutoScroll();
-		};
-
-		// Event listeners for manual scrolling buttons
-		document
-			.querySelector('#carousel-scroll-left')
-			.addEventListener('click', scrollCarouselBackward);
-		document
-			.querySelector('#carousel-scroll-right')
-			.addEventListener('click', scrollCarouselForward);
-	</script>
 </html>
