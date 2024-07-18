@@ -173,34 +173,27 @@
 }
 /* menu end */
  /* IND | USA begin */
- .header {
-  display: flex;
-  align-items: center;
-}
-
-.header .logo {
-  margin-right: auto; /* Ensures the logo stays on the left */
-}
-
-.header .mobile-only {
+ .mobile-only {
   display: none;
 }
 
 @media (max-width: 767px) {
-  .header .mobile-only {
+  .mobile-only {
       display: block;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      font-size: 25px;
-      color: whitesmoke;
-      font-weight: bold;
-      margin-left: 10px; /* Adjust the spacing as needed */
   }
+}
 
-  .header .mobile-only a {
-      text-decoration: none;
-      cursor: default;
-      font-size: 2.3rem;
-  }
+.mobile-only li {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+.mobile-only li a {
+  text-decoration: none;
+  cursor: default;
+  font-size: 2.3rem;
 }
  /* IND | USA end */
 
