@@ -179,7 +179,7 @@
 
 @media (max-width: 767px) {
   .mobile-only {
-      display: block;
+      display: inline;
   }
 }
 
