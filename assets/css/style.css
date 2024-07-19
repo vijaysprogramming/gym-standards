@@ -738,7 +738,8 @@ hr {
   background: #ff1313;
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
-  padding: 27px 44px;
+  /* was 27top-bottom 44 right-left */
+  padding: 20px 10px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -3403,7 +3404,8 @@ hr {
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
   /* line 50, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_headerMenu.scss */
   .header-area .menu-wrapper .main-menu {
-    margin-right: 30px;
+    margin-right: 15rem;
+    /* margin-right: 30px; */
   }
 }
 
