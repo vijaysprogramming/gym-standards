@@ -265,6 +265,12 @@
   width: 100%;
 }
 
+.logo > a > img
+{
+  width: 95px;
+  border-radius: 50%;
+}
+
 .square {
   cursor: pointer;
   display: flex;
