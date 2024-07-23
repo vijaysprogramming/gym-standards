@@ -758,7 +758,8 @@ hr {
   z-index: 1;
   overflow: hidden;
   margin: 0;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   border-radius: 10%;
 }
 
@@ -3426,7 +3427,7 @@ hr {
 
 /* line 62, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_headerMenu.scss */
 .header-area .menu-wrapper .main-menu ul li a {
-  color: #fff;
+  color: #7C0A02;
   font-weight: 500;
   padding: 39px 21px;
   display: block;
@@ -3449,8 +3450,8 @@ hr {
 
 /* line 78, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_headerMenu.scss */
 .header-area .menu-wrapper .main-menu ul li:hover > a {
-  color: #fff;
-  text-decoration: underline;
+  color: #7C0A02;
+  text-decoration: none;
 }
 
 /* line 83, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_headerMenu.scss */
@@ -3491,7 +3492,7 @@ hr {
 
 /* line 108, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_headerMenu.scss */
 .header-area .menu-wrapper .main-menu ul ul.submenu > li > a:hover {
-  color: #fff;
+  color: #7C0A02;
   background: none;
   padding-left: 13px !important;
 }
@@ -6884,6 +6885,12 @@ hr {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#950101', endColorstr='#3d0302',GradientType=0 );
   /* IE6-9 */
 }
+
+/* new */
+.header-area .menu-wrapper .main-menu ul ul.submenu, .header-sticky.sticky-bar {
+  background: #ffffff;
+}
+
 
 /* line 76, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_elements.scss */
 .sample-text-area {
