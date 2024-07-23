@@ -186,7 +186,7 @@
 .mobile-only li {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 25px;
-  color: whitesmoke;
+  color: #e41d2f;
   font-weight: bold;
   white-space: nowrap;
 }
@@ -201,11 +201,15 @@
 @media (max-width: 375px) {
   .mobile-only li {
       font-size: 20px; /* Adjust font size for very small screens */
+      
   }
 
   .mobile-only li a {
-      font-size: 2rem; /* Adjust font size for very small screens */
-      margin-right: 58px;
+      font-size: 1.7rem; /* Adjust font size for very small screens */
+      margin-right: 55px;
+      color: #e41d2f;
+      
+     
   }
 }
  /* IND | USA end */
