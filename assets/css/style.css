@@ -28,6 +28,7 @@
 /*--------------- ---- Responsive --------------------------*/
 /*-------------   Color Variable  --------------*/
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300;1,400&display=swap");
+
 /* line 30, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_color.scss */
 .white-bg {
   background: #ffffff;
@@ -268,7 +269,7 @@
 .logo > a > img
 {
   width: 95px;
-  border-radius: 50%;
+  border-radius: 5%;
 }
 
 .square {
