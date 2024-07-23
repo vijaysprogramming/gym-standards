@@ -83,13 +83,13 @@
 
 /* line 84, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_color.scss */
 .theme-color {
-  color: #FF0000;
+  color: #e41d2f;
 }
 
 /* line 50, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_variables.scss */
 .boxed-btn {
   background: #fff;
-  color: #FF0000 !important;
+  color: #e41d2f !important;
   display: inline-block;
   padding: 18px 44px;
   font-family: "Oswald", sans-serif;
@@ -107,8 +107,8 @@
 /* line 67, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_variables.scss */
 .boxed-btn:hover {
   background: #fff !important;
-  color: #FF0000;
-  border: 1px solid #FF0000;
+  color: #e41d2f;
+  border: 1px solid #e41d2f;
 }
 
 /* line 72, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_variables.scss */
@@ -3427,7 +3427,7 @@ hr {
 
 /* line 62, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_headerMenu.scss */
 .header-area .menu-wrapper .main-menu ul li a {
-  color: #7C0A02;
+  color: #e41d2f;
   font-weight: 500;
   padding: 39px 21px;
   display: block;
@@ -3450,7 +3450,7 @@ hr {
 
 /* line 78, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_headerMenu.scss */
 .header-area .menu-wrapper .main-menu ul li:hover > a {
-  color: #7C0A02;
+  color: #e41d2f;
   text-decoration: none;
 }
 
@@ -3492,7 +3492,7 @@ hr {
 
 /* line 108, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_headerMenu.scss */
 .header-area .menu-wrapper .main-menu ul ul.submenu > li > a:hover {
-  color: #7C0A02;
+  color: #e41d2f;
   background: none;
   padding-left: 13px !important;
 }
@@ -3549,7 +3549,7 @@ hr {
 
 /* line 169, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_headerMenu.scss */
 .mobile_menu .slicknav_menu .slicknav_btn .slicknav_icon-bar {
-  background-color: #FF0000 !important;
+  background-color: #e41d2f !important;
 }
 
 /* line 173, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_headerMenu.scss */
@@ -3560,7 +3560,7 @@ hr {
 /* line 176, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_headerMenu.scss */
 .mobile_menu .slicknav_menu .slicknav_nav a:hover {
   background: transparent;
-  color: #FF0000;
+  color: #e41d2f;
 }
 
 /* line 180, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_headerMenu.scss */
