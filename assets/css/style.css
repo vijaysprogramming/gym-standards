@@ -106,8 +106,8 @@
 
 /* line 67, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_variables.scss */
 .boxed-btn:hover {
-  background: #FF0000;
-  color: #fff !important;
+  background: #fff !important;
+  color: #FF0000;
   border: 1px solid #FF0000;
 }
 
@@ -728,26 +728,25 @@ hr {
 }
 
 /* line 235, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_common.scss */
-.owl-carousel:hover .owl-nav div:hover {
+.owl-carousel:hover .owl-nav div:hover{
   color: #fff;
   background: #ff3500;
 }
-
 /* line 244, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_common.scss */
 .btn {
-  background: #ff1313;
+  background:  #fff;
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   /* was 27top-bottom 44 right-left */
   padding: 20px 10px;
-  color: #fff;
+  color: #ff1313;
   cursor: pointer;
   display: inline-block;
   font-size: 18px;
   font-weight: 600;
   border-radius: 0px;
   line-height: 1;
-  border: 2px solid #fff;
+  border: 2px solid gray;
   -moz-user-select: none;
   letter-spacing: 1px;
   line-height: 0;
@@ -759,10 +758,12 @@ hr {
   z-index: 1;
   overflow: hidden;
   margin: 0;
+  margin-top: 2rem;
+  border-radius: 10%;
 }
 
 /* line 272, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_common.scss */
-.btn::before {
+/* .btn::before {
   content: "";
   position: absolute;
   left: 0;
@@ -778,19 +779,19 @@ hr {
   transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
   transform: scaleX(0);
   border-radius: 0px;
-}
+} */
 
 /* line 291, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_common.scss */
-.btn:hover::before {
+/* .btn:hover::before {
   transform: scaleX(1);
   color: #fff !important;
   z-index: -1;
-}
+} */
 
 /* line 296, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_common.scss */
-.btn:hover {
+/* .btn:hover {
   background-position: right;
-}
+} */
 
 /* line 299, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_common.scss */
 .btn.focus, .btn:focus {
