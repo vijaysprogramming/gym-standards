@@ -164,7 +164,7 @@
   height: auto;
   display: block;
   transition: background-color 0.3s ease;
-  border-radius: 10%;
+  /* border-radius: 10%; */
  
 }
 .items1 a:hover::before, .items2 a:hover::before {
