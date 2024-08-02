@@ -29,6 +29,10 @@
 /*-------------   Color Variable  --------------*/
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300;1,400&display=swap");
 
+:root {
+  --animationSpeed: 40s;
+}
+
 /* line 30, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_color.scss */
 .white-bg {
   background: #ffffff;
@@ -909,6 +913,11 @@ hr {
   position: relative;
   overflow: hidden;
   margin: 0;
+}
+@media (max-width: 768px) {
+  .margin-bottom-mobile {
+      margin-bottom: 40px; /* Adjust the value as needed */
+  }
 }
 
 /* line 371, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_common.scss */
@@ -8211,3 +8220,142 @@ del {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+/*** Fruits Start ***/
+
+/*** Navbar Start ***/
+.navbar .navbar-nav .nav-link {
+  padding: 10px 15px;
+  font-size: 16px;
+  transition: .5s;
+}
+
+.navbar {
+  height: 100px;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active,
+.fixed-top.bg-white .navbar .navbar-nav .nav-link:hover,
+.fixed-top.bg-white .navbar .navbar-nav .nav-link.active {
+  color: var(--bs-primary);
+}
+
+.navbar .dropdown-toggle::after {
+  border: none;
+  content: "\f107";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+@media (min-width: 1200px) {
+  .navbar .nav-item .dropdown-menu {
+      display: block;
+      visibility: hidden;
+      top: 100%;
+      transform: rotateX(-75deg);
+      transform-origin: 0% 0%;
+      border: 0;
+      transition: .5s;
+      opacity: 0;
+  }
+}
+
+.dropdown .dropdown-menu a:hover {
+  background: var(--bs-secondary);
+  color: var(--bs-primary);
+}
+
+.navbar .nav-item:hover .dropdown-menu {
+  transform: rotateX(0deg);
+  visibility: visible;
+  background: var(--bs-light) !important;
+  border-radius: 10px !important;
+  transition: .5s;
+  opacity: 1;
+}
+
+#searchModal .modal-content {
+  background: rgba(255, 255, 255, .8);
+}
+/*** Navbar End ***/
+
+
+/* products css begin*/
+/* styles.css */
+.card {
+  margin: 15px;
+}
+
+.card img {
+  cursor: pointer;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.product-card {
+  position: relative;
+}
+
+.quick-view-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.product-card:hover .quick-view-btn {
+  display: block;
+}
+
+.cart-item-img {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+
+/* products css end*/
+
+
+
+.mobile-links 
+{
+  color: #e41d2f;
+}
+
+/* infinite scroll start  */
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-250px * 7)); }
+}
+
+.slider {
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: auto;
+}
+
+.slider .slide-track {
+  animation: scroll var(--animationSpeed) linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+}
+
+.slider .slide {
+  height: 100px;
+  width: 250px;
+}
+/* infinite scroll end  */
+
+

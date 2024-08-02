@@ -341,3 +341,79 @@ document.querySelector('#right').addEventListener('click', handleClickGoAhead);
  // Event listeners for manual scrolling buttons
  document.querySelector('#carousel-scroll-left').addEventListener('click', scrollCarouselBackward);
  document.querySelector('#carousel-scroll-right').addEventListener('click', scrollCarouselForward);
+
+//  products script start
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+  const products = [
+      { id: 1, name: "Product 1", price: 10.00, image: "/nike.png" },
+      { id: 2, name: "Product 2", price: 20.00, image: "https://via.placeholder.com/150" },
+      { id: 3, name: "Product 3", price: 30.00, image: "https://via.placeholder.com/150" },
+  ];
+
+  const productList = document.getElementById('product-list');
+  const cartItems = document.getElementById('cart-items');
+  let cart = [];
+
+  products.forEach(product => {
+      const productCard = document.createElement('div');
+      productCard.className = 'col-lg-4 col-md-6 col-sm-12 product-card';
+      productCard.innerHTML = `
+          <div class="card">
+              <img src="${product.image}" alt="${product.name}" class="card-img-top" data-toggle="modal" data-target="#quickViewModal" data-image="${product.image}">
+              <div class="card-body">
+                  <h5 class="card-title">${product.name}</h5>
+                  <p class="card-text">$${product.price.toFixed(2)}</p>
+                  <button class="btnn btn-info details-btn">Details</button>
+                  <button class="btnn btn-success add-to-cart-btn" data-id="${product.id}">Add to Cart</button>
+              </div>
+          </div>
+      `;
+      productList.appendChild(productCard);
+  });
+
+  productList.addEventListener('click', (event) => {
+      if (event.target.classList.contains('add-to-cart-btn')) {
+          const productId = event.target.getAttribute('data-id');
+          const product = products.find(p => p.id == productId);
+          cart.push(product);
+          updateCart();
+      }
+  });
+
+  productList.addEventListener('click', (event) => {
+      if (event.target.hasAttribute('data-toggle') && event.target.getAttribute('data-toggle') === 'modal') {
+          const imageUrl = event.target.getAttribute('data-image');
+          document.getElementById('quickViewImage').src = imageUrl;
+      }
+  });
+
+  cartItems.addEventListener('click', (event) => {
+      if (event.target.classList.contains('remove-from-cart-btn')) {
+          const productId = event.target.getAttribute('data-id');
+          cart = cart.filter(item => item.id != productId);
+          updateCart();
+      }
+  });
+
+  document.getElementById('checkout-btn').addEventListener('click', () => {
+      localStorage.setItem('cart', JSON.stringify(cart));
+      window.location.href = 'checkout.html';
+  });
+
+  function updateCart() {
+      cartItems.innerHTML = '';
+      cart.forEach(product => {
+          const cartItem = document.createElement('li');
+          cartItem.className = 'list-group-item';
+          cartItem.innerHTML = `
+              <img src="${product.image}" alt="${product.name}" class="cart-item-img">
+              ${product.name} - $${product.price.toFixed(2)}
+              <button class="btn btn-danger btn-sm float-right remove-from-cart-btn" data-id="${product.id}">Remove</button>
+          `;
+          cartItems.appendChild(cartItem);
+      });
+  }
+});
+
+//  products script end
